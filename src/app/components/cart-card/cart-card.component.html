@@ -1,0 +1,41 @@
+<div class="component-container" [ngClass]="{'cart-visible': showCart, 'cart-no-visible': !showCart}">
+  <h2>Cart</h2>
+  <hr>
+
+  <div class="products">
+    <ng-template #noProducts>
+      <h2 class="no-products">Your Cart is empty</h2>
+    </ng-template>
+
+    <ng-container *ngIf="products.length > 0 else noProducts">
+      <div
+      class="product-parent-container"
+      *ngFor="let product of products; index as i">
+        <figure>
+          <img
+          src={{product.imgs[0]}}
+          alt={{product.title}}
+          height="60" width="60"
+          class="product-image">
+        </figure>
+        <div class="product-container">
+          <h3 class="product-title">{{product.title}}</h3>
+          <div class="price-container">
+            <span class="product-price">{{product.price| currency}}</span>
+            &nbsp;
+            <span>x</span>
+            &nbsp;
+            <span class="product-cuantity">{{product.cuantity}}</span>
+            &nbsp;
+            <span class="product-total">{{product.price * product.cuantity | currency}}</span>
+          </div>
+          <img
+          src="./assets/images/icon-delete.svg"
+          alt="delete"
+          (click)="deleteProduct(i)">
+        </div>
+        <button>Checkout</button>
+      </div>
+    </ng-container>
+  </div>
+</div>

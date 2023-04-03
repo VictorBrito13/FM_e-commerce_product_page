@@ -1,0 +1,100 @@
+hr, .menu-container {
+  width: 85%;
+  margin: auto;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  align-items: center;
+  --nav-height: 100px;
+  height: var(--nav-height);
+}
+
+.logo {
+  display: block;
+  margin: auto;
+}
+
+.menu {
+  color: var(--dark-grayish-blue);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menu-item {
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 35px;
+  transition: color .2s linear;
+}
+
+.menu-item:hover {
+  transition: color .2s linear;
+  color: var(--black);
+}
+
+.menu-item::after {
+  content: "";
+  --after-height: 5px;
+  --top-no-visible: calc((var(--nav-height) / 2) + (var(--after-height) * 2));
+  --top-visible: calc((var(--nav-height) / 2) + (var(--after-height)));
+  position: absolute;
+  top: var(--top-no-visible);
+  left: 0px;
+  width: 100%;
+  height: var(--after-height);
+  background-color: var(--orange);
+  transition: top .2s linear;
+}
+
+.menu-item:hover::after {
+  transition: top .2s linear;
+  top: var(--top-visible);
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart-container {
+  position: relative;
+}
+
+.cart-items-count {
+  --width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: calc(var(--width) * (-1));
+  color: var(--white);
+  min-width: var(--width);
+  height: 15px;
+  padding: 3px;
+  font-size: 90%;
+  border-radius: var(--width);
+  background-color: var(--orange);
+}
+
+.avatar, .cart {
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  outline: 2px solid transparent;
+  transition: outline .2s linear;
+}
+
+.avatar:hover {
+  outline: 2px solid var(--orange);
+  transition: outline .2s linear;
+}

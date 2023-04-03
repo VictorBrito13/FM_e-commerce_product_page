@@ -1,0 +1,104 @@
+.component-container {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0px 15px 15px #00000042;
+  background-color: var(--white);
+  min-width: 400px;
+  left: -188px;
+  transition: opacity .2s linear, visibility .2s linear;
+}
+
+.cart-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart-no-visible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+h2 {
+  color: var(--black);
+  font-size: 1.1rem;
+  margin-left: 15px;
+}
+
+.products {
+  max-height: 400px;
+  min-height: 200px;
+  overflow-y: auto;
+}
+
+.no-products {
+  color: var(--grayish-blue);
+  text-align: center;
+}
+
+.products::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.products::-webkit-scrollbar-thumb {
+  background-color: var(--orange);
+  border-radius: 5px;
+}
+
+.product-parent-container {
+  display: grid;
+  grid-template-areas:
+    "img info"
+    "button button";
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 15px;
+  padding: 15px;
+}
+
+figure {
+  grid-area: img;
+  margin: 0px auto;
+}
+
+.product-image {
+  border-radius: 5px;
+}
+
+.product-container {
+  grid-area: info;
+  display: grid;
+  grid-template-areas:
+    "title delete"
+    "price delete";
+  align-items: center;
+  justify-content: center;
+}
+
+.product-title {
+  grid-area: title;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.price-container {
+  grid-area: price;
+}
+
+img[alt="delete"] {
+  grid-area: delete;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+button {
+  grid-area: button;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 0px;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
