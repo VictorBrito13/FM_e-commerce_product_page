@@ -1,8 +1,3 @@
-hr, .menu-container {
-  width: 85%;
-  margin: auto;
-}
-
 .menu-container {
   display: grid;
   grid-template-columns: 20% 60% 20%;

@@ -13,7 +13,7 @@
       *ngFor="let product of products; index as i">
         <figure>
           <img
-          src={{product.imgs[0]}}
+          src="{{ './assets/images/' + product.imgs[0]}}"
           alt={{product.title}}
           height="60" width="60"
           class="product-image">

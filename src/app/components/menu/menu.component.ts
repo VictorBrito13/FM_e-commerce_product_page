@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CART_PRODUCTS } from 'src/app/products/products';
+import { IProduct } from 'src/app/models/product';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,18 +8,24 @@ import { CART_PRODUCTS } from 'src/app/products/products';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  public products = CART_PRODUCTS
+  public products!: IProduct[]
   public showCart = false
 
-  constructor() {
+  constructor(
+    private _productService: ProductsService
+  ) {
   }
 
   ngOnInit(): void {
+    this.getProducts()
   }
 
   showCartHandler(): void {
     this.showCart = !this.showCart
-    console.log(this.showCart)
+  }
+
+  getProducts(){
+    this.products = this._productService.getProducts()
   }
 
 }

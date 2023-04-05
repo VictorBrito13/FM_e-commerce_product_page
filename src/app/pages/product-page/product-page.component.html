@@ -1,0 +1,49 @@
+<div class="page-container">
+  <div class="product">
+    <div class="imgs-container">
+      <figure>
+        <img
+        src="{{'./assets/images/' + currentImg}}"
+        alt={{product.title}}
+        height="350" width="350"
+        class="current-img">
+        <figure class="thumbnails-container">
+          <img
+          src="{{'./assets/images/' + thumbnail}}"
+          alt={{product.title}}
+          height="100"
+          width="100"
+          (click)="changeImage(i)"
+          *ngFor="let thumbnail of product.imgs; index as i">
+        </figure>
+      </figure>
+    </div>
+    <div class="product-info-container">
+      <h3 style="color: var(--orange); text-transform: uppercase; font-size: .9rem;">sneaker company</h3>
+      <h1>{{product.title}}</h1>
+      <p style="color: var(--dark-grayish-blue); line-height: 25px;">{{product.description}}.</p>
+      <div class="price-container">
+        <p style="font-weight: bold; font-size: 1.5rem;">{{product.price | currency}} <span class="discount">{{product.discount}}%</span></p>
+        <p style="color: var(--dark-grayish-blue); text-decoration: line-through;">{{product.price * 100 / product.discount | currency}}</p>
+      </div>
+      <div class="add-product-container">
+        <div class="add-product">
+          <img
+          src="./assets/images/icon-minus.svg"
+          alt="minus" height="25" width="25"
+          (click)="cuantityProductHandler('minus')">
+          <span class="product-cuantity">{{product.cuantity}}</span>
+          <img
+          src="./assets/images/icon-plus.svg"
+          alt="plus"
+          height="25" width="25"
+          (click)="cuantityProductHandler('plus')">
+        </div>
+        <button (click)="addProduct()">
+          <img src="./assets/images/icon-cart.svg" alt="cart">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
