@@ -1,4 +1,9 @@
 <div class="page-container">
+  <app-lightbox
+  *ngIf="showLightbox"
+  [currentImage]="currentImg"
+  [thumbnails]="product.imgs"
+  (showLightboxEmitter)="showLightboxHandler($event)"></app-lightbox>
   <div class="product">
     <div class="imgs-container">
       <figure>
@@ -6,7 +11,8 @@
         src="{{'./assets/images/' + currentImg}}"
         alt={{product.title}}
         height="350" width="350"
-        class="current-img">
+        class="current-img"
+        (click)="showLightboxHandler(true)">
         <figure class="thumbnails-container">
           <img
           src="{{'./assets/images/' + thumbnail}}"

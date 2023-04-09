@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductPageComponent implements OnInit {
   public product!: IProduct
   public currentImg = ""
+  public showLightbox = false
 
   constructor(
     private _productService: ProductsService
@@ -45,6 +46,10 @@ export class ProductPageComponent implements OnInit {
       this.product.cuantity -= 1
       if(this.product.cuantity < 0) this.product.cuantity = 0
     }
+  }
+
+  showLightboxHandler($event: boolean): void {
+    this.showLightbox = $event
   }
 
 }
