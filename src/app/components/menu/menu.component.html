@@ -1,7 +1,21 @@
 <nav class="menu-container">
-  <img src="./assets/images/logo.svg" class="logo" alt="sneakers">
+  <div style="display: flex; justify-content: flex-start; gap: 25px; padding: 25px;">
+    <img
+    src="./assets/images/icon-menu.svg"
+    alt="open menu"
+    style="display: none; padding: 5px;"
+    class="menu-btn-open"
+    (click)="openMenu()">
+    <img src="./assets/images/logo.svg" class="logo" alt="sneakers">
+  </div>
 
-  <ul class="menu">
+  <ul class="menu" #menu>
+    <li class="close-menu" style="display: none;">
+      <img
+      src="./assets/images/icon-close.svg"
+      alt="close menu"
+      (click)="closeMenu()">
+    </li>
     <li class="menu-item">collections</li>
     <li class="menu-item">men</li>
     <li class="menu-item">women</li>
