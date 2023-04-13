@@ -7,22 +7,9 @@
       (click)="closeLightbox()">
     </div>
 
-    <figure class="img-container">
-      <img
-      src="./assets/images/{{currentImage}}"
-      alt="product" height="450" width="350"
-      class="lightbox-img">
-      <img
-      src="./assets/images/icon-previous.svg"
-      alt="prev"
-      class="previous"
-      (click)="changeImage('prev')">
-      <img
-      src="./assets/images/icon-next.svg"
-      alt="next"
-      class="next"
-      (click)="changeImage('next')">
-    </figure>
+    <app-slider
+    [images]="thumbnails"
+    (imageIndexEmitter)="getIndexImage($event)"></app-slider>
 
     <figure class="thumbnails-container">
       <img

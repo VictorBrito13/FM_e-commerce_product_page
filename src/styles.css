@@ -46,7 +46,8 @@ ul {
   }
 
   .menu {
-    position: absolute;
+    position: fixed;
+    margin: 0px;
     top: 0px;
     left: -100%;
     z-index: 10;
@@ -100,9 +101,17 @@ ul {
     display: none !important;
   }
 
+  app-product-page app-slider {
+    display: block !important;
+  }
+
+  .imgs-container {
+    width: 80%;
+    margin: auto;
+  }
+
   .current-img-container {
-    width: 100%;
-    margin: 0px;
+    display: none;
   }
 
   .add-product-container {

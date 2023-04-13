@@ -3,7 +3,7 @@ figure {
 }
 
 .component-container {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100%;
   min-height: 100vh;
@@ -38,40 +38,8 @@ img[alt="close"], .thumbnail {
   cursor: pointer;
 }
 
-.img-container {
-  position: relative;
-  width: 100%;
-}
-
-.previous, .next {
-  --btn-lightbox-height: 25px;
-  --btn-lightbox-width: 25px;
-  position: absolute;
-  top: calc(50% - var(--btn-lightbox-height));
-  background-color: var(--white);
-  height: var(--btn-lightbox-height);
-  width: var(--btn-lightbox-width);
-  object-fit: contain;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.previous {
-  left: calc(0px - var(--btn-lightbox-width));
-}
-
-.next {
-  right: calc(0px - var(--btn-lightbox-width));
-}
-
-.lightbox-img, .thumbnail {
+.thumbnail {
   border-radius: 10px;
-}
-
-.lightbox-img {
-  width: 100%;
-  object-fit: cover;
 }
 
 .thumbnails-container {

@@ -6,6 +6,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CartCardComponent } from './components/cart-card/cart-card.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { LightboxComponent } from './components/lightbox/lightbox.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { LightboxComponent } from './components/lightbox/lightbox.component';
     MenuComponent,
     CartCardComponent,
     ProductPageComponent,
-    LightboxComponent
+    LightboxComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule

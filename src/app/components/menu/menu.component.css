@@ -22,7 +22,6 @@
 
 .menu-item {
   position: relative;
-  z-index: 100;
   text-transform: capitalize;
   cursor: pointer;
   display: inline-block;

@@ -6,6 +6,9 @@
   (showLightboxEmitter)="showLightboxHandler($event)"></app-lightbox>
   <div class="product">
     <div class="imgs-container">
+      <app-slider
+      style="display: none;"
+      [images]="product.imgs"></app-slider>
       <figure class="current-img-container">
         <img
         src="{{'./assets/images/' + currentImg}}"

@@ -1,0 +1,34 @@
+.img-container {
+  position: relative;
+  width: 100%;
+  margin: 0px;
+}
+
+.previous, .next {
+  --btn-lightbox-height: 25px;
+  --btn-lightbox-width: 25px;
+  position: absolute;
+  top: calc(50% - var(--btn-lightbox-height));
+  background-color: var(--white);
+  height: var(--btn-lightbox-height);
+  width: var(--btn-lightbox-width);
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.previous {
+  left: calc(0px - var(--btn-lightbox-width));
+}
+
+.next {
+  right: calc(0px - var(--btn-lightbox-width));
+}
+
+.slider-img {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
